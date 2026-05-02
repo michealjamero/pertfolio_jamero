@@ -580,57 +580,69 @@
 
         @media (max-width: 1024px) {
             .about-container {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* Stacks the text and image */
                 height: auto;
-                padding: 100px 5%;
+                padding: 80px 10%;
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
             }
-            .about-image-container {
-                position: relative;
-                top: 0;
-                order: -1;
-                height: 50vh;
-                margin-bottom: 50px;
-            }
+
             .about-content {
                 padding-right: 0;
+                order: 2; /* Moves text below the image for better flow */
             }
+
+            .about-image-container {
+                height: 400px; /* Gives the portrait a fixed area so it doesn't vanish */
+                order: 1;
+            }
+
             .about-text {
                 max-width: 100%;
             }
+
             .about-title-overlay {
-                font-size: 12vw;
+                font-size: 10vw; /* Scales text down so it doesn't swallow the paragraph */
             }
         }
 
         @media (max-width: 768px) {
             /* Hero Mobile */
             .bg-text {
-                font-size: 20vw;
+                font-size: 22vw;
+                letter-spacing: -0.01em;
             }
             .portrait-container {
                 height: 80%;
             }
             .side-label {
-                display: none; /* Hide side labels on small screens */
+                display: none; /* Hide side labels to prevent horizontal scrolling */
             }
             .top-left, .top-right {
                 top: 20px;
                 left: 20px;
                 right: 20px;
             }
-            .bottom-left, .bottom-right {
+            .bottom-left {
                 bottom: 20px;
                 left: 20px;
-                right: 20px;
+            }
+            .roles {
+                font-size: 0.65rem;
             }
             .bottom-right {
-                flex-direction: column;
+                bottom: 20px;
+                right: 20px;
                 align-items: flex-end;
             }
+            .social-item span {
+                display: none; /* Only show icons on very small screens to save space */
+            }
 
-            /* About Mobile */
+            /* About Mobile Refinement */
             .about-title-overlay {
-                font-size: 15vw;
+                font-size: 12vw;
             }
             
             /* Grids Mobile */
